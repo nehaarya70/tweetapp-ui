@@ -1,0 +1,51 @@
+.panel-heading{
+    background-color: transparent;
+    color: #e20074;
+    padding: 2px 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+.panel-info{
+    border: 1px solid darkgray;
+}
+
+.heading{
+    font-size: 16px;
+    margin-top: 12px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+.like-icon{
+    color: #e20074;
+    font-size: 14px;
+    top: 2px;
+}
+
+.like-block{
+    float: right;
+    margin-top: 12px;
+    color: darkgray;
+}
+
+.like-btn{
+    background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    padding-left: 9px;
+    font-style: italic;
+    font-weight: normal;
+    color: darkgray;
+    font-size: 12px;
+}
+
+.like-btn:hover{
+    text-decoration: underline;
+}
+
+.list-group{
+    padding-top: 40px;
+}

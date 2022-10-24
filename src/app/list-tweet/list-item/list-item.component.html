@@ -1,0 +1,21 @@
+<li class="list-group-item">
+    <span class="glyphicon glyphicon-heart like-icon"></span>&nbsp;{{tweet.noOfLikes}}
+    <span class="label pull-right" style="background-color: darkgray;">{{tweet.createdDateTime | date}}</span>
+    &nbsp;&nbsp;
+    <span>{{tweet.message}}</span>
+    <br>
+    <br>
+    <span style='color:white;' class="pull-right btn btn-danger" (click)="onSelcted(tweet.id)">Delete</span>
+    <button class="btn " style="background-color:#1da1f2; color:white;" (click)="onEdit(tweet.message)"
+        *ngIf="!isEdit">Edit</button><br>
+    <div *ngIf="isEdit">
+        <div class="col-xs-6">
+            <input type="text" class="form-control" [(ngModel)]="updatedTweet" min="1" required
+                placeholder="Enter the Tweet here ...">
+        </div>
+        &nbsp;&nbsp;<button class="btn btn-primary" (click)="onSubmit(tweet.id)"
+            [disabled]="updatedTweet.length<1">Submit</button>&nbsp;
+        <button class="btn btn-primary" (click)="onClose()">Close</button>
+    </div>
+</li>
+<br>

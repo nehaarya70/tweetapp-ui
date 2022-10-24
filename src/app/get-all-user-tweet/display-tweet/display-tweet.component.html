@@ -1,0 +1,31 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="heading">{{tweet.username | titlecase}}</h3>
+    <span class="like-block">
+      <span class="glyphicon glyphicon-heart like-icon"></span>&nbsp;{{tweet.noOfLikes}}
+    </span>
+  </div>
+  <div class="panel-body">{{tweet.message | titlecase}}</div>
+  <div style="margin-bottom:2%;">
+    &nbsp;
+    <div style="padding-left: 15px;">
+      <button class="like-btn" *ngIf="!istweetLiked" (click)="onTweetLike(tweet.id, tweet.username)">Like</button>
+      <button class="like-btn" *ngIf="istweetLiked" (click)="onTweetUnlike(tweet.id, tweet.username)">Unlike</button>
+      <button class="like-btn" style="padding-left: 30px;" (click)="showReplyBox()">Reply</button>
+      <button class="like-btn" style="padding-left: 30px;" (click)="showTweet(tweet.id)">Details</button>
+
+      <span class="label pull-right" style="margin-right:2% ; background-color: darkgray;">Created on
+        {{tweet.createdDateTime| date}}</span>
+    </div>
+    &nbsp;
+    <div *ngIf="showReply">
+      <div class="col-xs-6">
+        <input type="text" class="form-control" [(ngModel)]="replyMsg" min="1" required
+          placeholder="Enter the reply here ...">
+      </div>
+      &nbsp;&nbsp;<button class="btn btn-primary" (click)="onSubmit(tweet.id, tweet.username)"
+        [disabled]="replyMsg.length<1">Submit</button>&nbsp;
+      <button class="btn btn-primary" (click)="onClose()">Close</button>
+    </div>
+  </div>
+</div>

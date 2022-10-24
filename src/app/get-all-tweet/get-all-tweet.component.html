@@ -1,0 +1,14 @@
+<div class="alltweets-page">
+    <div class="container">
+        <div class="row" style="margin-top:5%;margin-left: 20%; ">
+            <div class="col-sm-8">
+                <ul class="list-group">
+                    <app-display-tweet *ngFor="let tweet of tweet; let i = index" [tweet]="tweet" 
+                    [i]="i" [istweetLiked]="istweetLiked(tweet.id)"
+                    (value)="onTweetLike($event)" (valueUnlike)="onTweetUnlike($event)" (selected)="onSelect($event)">
+                    </app-display-tweet>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.panel-heading{
+    background-color: transparent;
+    color: #e20074;
+    padding: 2px 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+.panel-info{
+    border: 1px solid darkgray;
+}
+
+.heading{
+    font-size: 16px;
+    margin-top: 12px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+.like-icon{
+    color: #e20074;
+    font-size: 14px;
+}
+
+.like-block{
+    float: right;
+    margin-top: 12px;
+}
+
+.like-btn{
+    background: none;
+	color: #e20074;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.like-btn:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+<div class="onetweet-page" *ngIf="tweet">
+    <div class="container">
+        <div class="row" style="margin-top:5%;margin-left: 20%;">
+            <div class="col-sm-8">
+                <ul class="list-group">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="heading">{{tweet.username | titlecase}}</h3>
+                            <span class="like-block">
+                                <span class="glyphicon glyphicon-heart like-icon"></span>&nbsp;{{tweet.noOfLikes}}
+                            </span>
+                        </div>
+                        <div class="panel-body">{{tweet.message | titlecase}}</div>
+                        <div style="margin-bottom:2%;">
+                            &nbsp;
+                            <div style="padding-left: 15px;">
+                                <span class="label pull-right"
+                                    style="margin-right:2% ; background-color: darkgray;">Created on
+                                    {{tweet.createdDateTime| date}}</span>
+                            </div>
+                            &nbsp;
+                        </div>
+                        <div class="replies-section">
+                             <ng-container *ngFor="let reply of replies; let i = index">
+                                <div class="single-reply">
+                                    <div class="reply-user">@{{reply.replyByUser}}</div>
+                                    <div class="reply-msg">{{reply.reply}}</div>
+                                </div>
+                             </ng-container>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
